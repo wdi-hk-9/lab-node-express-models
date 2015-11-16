@@ -8,7 +8,11 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
 //CONNECTION TO MONGO HERE
+mongoose.connect('mongodb://localhost:27017/mongoose-bcrypt-test');
 
+var User = require('./models/user');
+
+app.use(require('./controllers'));
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
